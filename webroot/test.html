@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>用户登录</title>
+<?php echo $this->Js->writeBuffer(); ?>
+</head>
+<body>
+<script type="text/javascript">
+$('#un').load('test.html');
+</script>
+<div id='un'>
+
+</div>
+<div class="users form">
+	    <h2>Login</h2>
+				<?php
+				echo $this->Form->create('User', array(
+				    	'url' => array('controller' => 'users','action' => 'login')));
+				echo $this->Form->input('User.name');
+				echo $this->Form->input('User.password');
+				echo $this->Form->end('登录');
+				?>
+      <span><?php  echo $this->Html->link('注册',array('action'=>'add'));  ?></span>
+</div>
+<div>
+</div>
+</body>
+</html>
